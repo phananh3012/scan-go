@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopApp", "ShopApp\ShopApp.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{4DC7D93F-D918-4570-B415-80B19870B8E5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{DB63CAC9-BBDA-4467-B69D-D5BA8B206C4D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectAPI", "..\ConnectAPI\ConnectAPI\ConnectAPI.csproj", "{63D4CD66-15E2-41F3-B231-356DF2A6AB54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,12 +23,17 @@ Global
 		{4EEA4030-853C-4E38-9E4E-4A7AB6FD1AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EEA4030-853C-4E38-9E4E-4A7AB6FD1AE1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4EEA4030-853C-4E38-9E4E-4A7AB6FD1AE1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{63D4CD66-15E2-41F3-B231-356DF2A6AB54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D4CD66-15E2-41F3-B231-356DF2A6AB54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D4CD66-15E2-41F3-B231-356DF2A6AB54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D4CD66-15E2-41F3-B231-356DF2A6AB54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4EEA4030-853C-4E38-9E4E-4A7AB6FD1AE1} = {4DC7D93F-D918-4570-B415-80B19870B8E5}
+		{63D4CD66-15E2-41F3-B231-356DF2A6AB54} = {DB63CAC9-BBDA-4467-B69D-D5BA8B206C4D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0C399CD6-A682-4A48-B07E-1C0F391A56C1}
