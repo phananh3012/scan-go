@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             xmlns:badge="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             x:Class="ShopApp.MainPage"
+             BackgroundColor="{StaticResource Secondary}"
+            >
+    <ScrollView>
+        <VerticalStackLayout>
+            <StackLayout HeightRequest="50" BackgroundColor="{StaticResource Primary}" />
+            <VerticalStackLayout
+            Spacing="50"
+            Padding="10,40"
+            VerticalOptions="Start">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Info" Margin="10,0" FontSize="20" FontAttributes="Bold"/>
+                    <Label x:Name="name" Text="Name here" Margin="10,0"/>
+                    <Label x:Name="phoneNumber" Text="Phone here" Margin="10,0"/>
+                    <Label x:Name="points" Text="Point here" Margin="10,0"/>
+                </VerticalStackLayout>
+                <Line X2="2000" Stroke="black"/>
+                <cv:CameraView x:Name="cameraView" WidthRequest="370" HeightRequest="220" BarCodeDetectionEnabled="True"
+                           BarcodeDetected="cameraView_BarcodeDetected"/>
+                <Line X2="2000" Stroke="black"/>
+
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="25" VerticalOptions="Center" HeightRequest="70" WidthRequest="330" Margin="10,0">
+                    <Button x:Name="logOut" Text="Log Out" Clicked="logOut_Clicked" HeightRequest="50"></Button>
+                    <Button Text="Add item" Clicked="Button_Clicked" HeightRequest="50"></Button>
+                    <badge:SfBadgeView x:Name="badgeCart"  WidthRequest="100" >
+                        <badge:SfBadgeView.Content>
+                            <Button Text="Cart" Clicked="Button_Clicked_1" HeightRequest="50" WidthRequest="80"></Button>
+                        </badge:SfBadgeView.Content>
+                        <badge:SfBadgeView.BadgeSettings>
+                            <badge:BadgeSettings Type="None" Background="red" Animation="Scale" 
+                             TextColor="white" Offset="0,0" Position="TopLeft"/>
+                        </badge:SfBadgeView.BadgeSettings>
+                    </badge:SfBadgeView>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

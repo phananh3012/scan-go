@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.View.SignupPage"
+             BackgroundColor="{StaticResource Secondary}">
+    <Grid>
+        <StackLayout Margin="50, 0" VerticalOptions="Start" Spacing="10">
+            <Image Source="logo_dark.png" HeightRequest="230"/>
+            <StackLayout Margin="0,0,0,20">
+                <Label FontSize="32" Text="Signing up"/>
+                <Label TextColor="Gray" Text="Please fill out the details"/>
+            </StackLayout>
+            <StackLayout>
+                <Label TextColor="Black" FontSize="16" Text="Your name"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" Background="White" CornerRadius="5"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="Enter your name"
+                    TextColor="Black" Margin="5,0" PlaceholderColor="Gray" x:Name="cusName"/>
+                </Grid>
+                
+                <Label TextColor="Black" FontSize="16" Text="Phone number (This is your Username)"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" Background="White" CornerRadius="5"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="Enter phone number"
+            TextColor="Black" Margin="5,0" PlaceholderColor="Gray" x:Name="cusPhone"/>
+                </Grid>
+
+                <Label TextColor="Black" FontSize="16" Text="Password"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" Background="White" CornerRadius="5"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="Enter password"
+            TextColor="Black" Margin="5,0" PlaceholderColor="Gray" x:Name="cusPassword" IsPassword="True"/>
+                </Grid>
+                <HorizontalStackLayout Spacing="115" HorizontalOptions="Center">
+                    <Button Margin="0,15" x:Name="goBack" BackgroundColor="{StaticResource Primary}"
+                  Text="Go Back" TextColor="White" Clicked="goBack_Clicked"/>
+                    <Button Margin="0,15" BackgroundColor="{StaticResource Primary}"
+              Text="Sign Up" TextColor="White" Clicked="Button_Clicked"/>
+                </HorizontalStackLayout>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

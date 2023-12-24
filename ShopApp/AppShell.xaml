@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ShopApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ShopApp"
+    xmlns:view="clr-namespace:ShopApp.View"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+
+    <ShellContent 
+            ContentTemplate="{DataTemplate local:LoginPage}"
+            Route="LoginPage" />
+    <TabBar Route="MainTab">
+        <Tab Title="Home">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+        <Tab Title="Cart">
+            <ShellContent
+                ContentTemplate="{DataTemplate view:CartPage}"
+                Route="CartPage" />
+        </Tab>
+
+    </TabBar>
+    
+    
+
+
+
+
+
+
+
+</Shell>

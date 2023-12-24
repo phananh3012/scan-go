@@ -1,0 +1,3 @@
+C:\Users\THINKPAD X270\source\repos\ShopApp\ShopApp\bin\Release\net7.0-android\publish\com.phananhnguyen.myapp-Signed.aab
+C:\Users\THINKPAD X270\source\repos\ShopApp\ShopApp\bin\Release\net7.0-android\publish\com.phananhnguyen.myapp.aab
+C:\Users\THINKPAD X270\source\repos\ShopApp\ShopApp\bin\Release\net7.0-android\publish\com.phananhnguyen.myapp-Signed.apk

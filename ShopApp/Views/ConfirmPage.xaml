@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.View.ConfirmPage"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"       
+             xmlns:model="clr-namespace:ShopApp.Model"           
+             BackgroundColor="{StaticResource Secondary}"
+             >
+    <VerticalStackLayout Margin="20, 20" Spacing="20">
+        <Label Text="Scan the code at check out" FontSize="20" HorizontalOptions="Center"/>
+        <cv:CameraView x:Name="cameraView" WidthRequest="300" HeightRequest="300" BarCodeDetectionEnabled="True"
+                BarcodeDetected="cameraView_BarcodeDetected" CamerasLoaded="cameraView_CamerasLoaded"/>
+        <Frame HeightRequest="220" WidthRequest="360" BackgroundColor="{StaticResource Secondary}" BorderColor="Black">
+            <Grid  VerticalOptions="Start">
+                <CollectionView x:Name="collectionProduct" EmptyView="Add Items To Cart!">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Cart">
+                            <StackLayout>
+                                <HorizontalStackLayout Spacing="10" Padding="0,5,0,5" HorizontalOptions="Center">
+                                    <Label VerticalOptions="Center" Text="{Binding Name}" WidthRequest="150" FontSize="12"/>
+                                    <Label VerticalOptions="Center" Text="{Binding Price}" FontSize="12" WidthRequest="50"/>
+                                    <Label VerticalOptions="Center" Text="{Binding Qty}" FontSize="12" WidthRequest="30"/>
+                                    <Label VerticalOptions="Center" Text="{Binding Sum}" FontSize="12" WidthRequest="50"/>
+                                </HorizontalStackLayout>
+                                <Line X2="325" Stroke="darkgray"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Frame>
+        <FlexLayout JustifyContent="SpaceBetween" Margin="30,5">
+            <Label Text="Total:" FontSize="18"/>
+            <Label x:Name="cartTotal" FontSize="18"/>
+        </FlexLayout>
+        <Button x:Name="cancelBtn" Text="Cancel" Clicked="cancelBtn_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

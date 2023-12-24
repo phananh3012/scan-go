@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.LoginPage"
+             xmlns:control="clr-namespace:ShopApp.Control"
+             BackgroundColor="{StaticResource Secondary}">
+    <Grid>
+        <StackLayout Margin="50, 0" VerticalOptions="Start" Spacing="10">
+            <Image Source="logo_dark.png" HeightRequest="230"/>
+            <StackLayout Margin="0,0,0,20">
+                <Label FontSize="32" Text="Welcome back"/>
+                <Label TextColor="Gray" Text="Sign in to continue"/>
+            </StackLayout>
+            <StackLayout>
+                <Label TextColor="Black" FontSize="16" Text="Username"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" Background="White" CornerRadius="5"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="Enter username"
+                TextColor="Black" Margin="5,0" PlaceholderColor="Gray" x:Name="username"/>
+                </Grid>
+
+                <Label TextColor="Black" FontSize="16" Text="Password"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" Background="White" CornerRadius="5"/>
+                    <Entry BackgroundColor="Transparent" Placeholder="Enter password"
+                TextColor="Black" Margin="5,0" PlaceholderColor="Gray" x:Name="password" IsPassword="True"/>
+                </Grid>
+                <Button Margin="0,15" BackgroundColor="{StaticResource Primary}"
+              Text="Sign in" TextColor="White" Clicked="Button_Clicked"/>
+                <control:HyperLink Text="Do not have an account? Click here to sign up!" Url="PaymentPage" /> 
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+   
+</ContentPage>

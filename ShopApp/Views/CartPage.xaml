@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.View.CartPage"
+             xmlns:model="clr-namespace:ShopApp.Model"
+             Title="Cart"
+             BackgroundColor="{StaticResource Secondary}"
+             Shell.NavBarIsVisible="True">
+    <VerticalStackLayout VerticalOptions="Start" Margin="10,20" Spacing="30">
+        <Frame HeightRequest="400" BackgroundColor="{StaticResource Secondary}" BorderColor="Black">
+            <Grid  VerticalOptions="Start">
+                <CollectionView x:Name="collectionProduct" EmptyView="Add Items To Cart!">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Cart">
+                            <StackLayout>
+                                <HorizontalStackLayout Spacing="5" Padding="0,5,0,5" HorizontalOptions="Center">
+                                    <Label VerticalOptions="Center" Text="{Binding Name}" WidthRequest="110" FontSize="10"/>
+                                    <Label VerticalOptions="Center" Text="{Binding Price}" FontSize="10" WidthRequest="40"/>
+                                    <Label VerticalOptions="Center" Text="{Binding Qty}" FontSize="10" WidthRequest="10"/>
+                                    <Label VerticalOptions="Center" Text="{Binding Sum}" FontSize="10" WidthRequest="40"/>
+                                    <Button x:Name="addBtn" Text="+" HeightRequest="40" WidthRequest="40" FontSize="10" Command="{Binding  Path= BindingContext.AddItem,Source={Reference collectionProduct}}" CommandParameter="{Binding .}"/>
+                                    <Button x:Name="removeBtn" Text="-" HeightRequest="40" WidthRequest="40" FontSize="10" Command="{Binding  Path= BindingContext.RemoveItem,Source={Reference collectionProduct}}" CommandParameter="{Binding .}"/>
+                                </HorizontalStackLayout>
+                                <Line X2="385" Stroke="darkgray" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Frame>
+        <StackLayout>
+            <FlexLayout JustifyContent="SpaceBetween" Margin="30,0">
+                <Label Text="Sub Total:"/>
+                <Label x:Name="subTotal"/>
+            </FlexLayout>
+            <FlexLayout JustifyContent="SpaceBetween" Margin="30,5">
+                <Label Text="Discount:"/>
+                <Label x:Name="discount" Text="0"/>
+            </FlexLayout>
+            <Line X2="2000" Stroke="black" Margin="30,0"/>
+            <FlexLayout JustifyContent="SpaceBetween" Margin="30,5">
+                <Label Text="Total:"/>
+                <Label x:Name="cartTotal"/>
+            </FlexLayout>
+            <FlexLayout JustifyContent="SpaceBetween" Margin="30,5">
+                <Label Text="Point Accumulated:"/>
+                <Label x:Name="points"/>
+            </FlexLayout>
+            <FlexLayout JustifyContent="SpaceAround" Margin="10,30,10,0">
+                <Button x:Name="applyDis" Text="Apply Discount" Clicked="applyDis_Clicked"></Button>
+                <Button x:Name="checkOut" Text="Check Out" Clicked="checkOut_Clicked"></Button>
+            </FlexLayout>
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

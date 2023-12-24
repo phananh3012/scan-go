@@ -1,0 +1,1 @@
+C:\Users\THINKPAD X270\source\repos\ShopApp\ShopApp\ShopApp.csproj;x64
